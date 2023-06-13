@@ -1,3 +1,6 @@
+# Descriere
+Aceste proiect este o masina turing reprezentata prin banda infinita la dreapta si finita la stanga, iar caracterul curent este reprezentat de pozitia degetului. Au fost implementate operatiile de baza pentru deplasarea si modificarea benzii.
+
 # Implementare
 
 Pentru implementarea benzii am folosit o lista dublu inlantuita cu santinela, asa cum era precizat in cerinta. Am luat scheletul de cod pentru acest tip de lista de la laborator si am modificat structura astfel incat informatia sa fie de tip char. Apoi, am definit o structura TBanda care are doua elemente de tipul listei descrisa mai sus, vf care reprezinta varful listei si deget care reprezinta adresa catre pozitia degetului.
