@@ -1,4 +1,4 @@
-#Implementare
+# Implementare
 
 Pentru implementarea benzii am folosit o lista dublu inlantuita cu santinela, asa cum era precizat in cerinta. Am luat scheletul de cod pentru acest tip de lista de la laborator si am modificat structura astfel incat informatia sa fie de tip char. Apoi, am definit o structura TBanda care are doua elemente de tipul listei descrisa mai sus, vf care reprezinta varful listei si deget care reprezinta adresa catre pozitia degetului.
 Pentru implementarea cozii am ales sa folosesc o lista simplu inlantuita si am folosit scheletul de cod de la laborator pentru coada, informatia din structura fiind de tip char*.
@@ -6,7 +6,7 @@ Pentru implementarea stivei  am ales sa folosesc o lista simplu inlantuita cu in
 Structurile si headere-le functiilor se gasesc in fisierul headers.h, iar functiile pentru coada si stiva sunt in fisierul functiiCoadaStiva.c, functiile pentru banda sunt in functiiBanda, functiile pentru efectuarea actiunilor descrise in cerinta sunt in functiiOperatii.h.
 
 
-#Program principal tema1.c
+# Program principal tema1.c
 
 Initializez banda L, cu ajutorul functiilor din schelet. Pointerul catre deget este initializat cu adresa caracterului #, singurul caracter care se afla initial pe banda.
 Initializez o coada c in care sunt retinute operatiile de tip UPDATE care se vor executa la intalnirea instructiunii EXECUTE.
@@ -15,7 +15,7 @@ Se citeste din fisierul tema1.in valoarea n, reprezentand numarul de instructiun
 La final, se inchid fisierele de citire si scriere si se fac dezalocari pentru toate listele si pentru string-ul folosit la citire.
 
 
-#Operatii de tip UPDATE
+# Operatii de tip UPDATE
 
 Functia WRITE primeste ca parametru un pointer la pozitia degetului si un char. Aceasta modifica informatia de la pozitia degetului in cea primita prin parametrul char.
 Functia MOVE_RIGHT primeste ca parametru un pointer la pozitia degetului. Daca urmatoarea pozitie este nula, se apeleaza functia INSERT_RIGHT pentru a insera caracterul # la finalul benzii. Altfel, degetul este mutat la urmatoarea adresa din lista.
@@ -26,20 +26,18 @@ Functia MOVE_RIGHT_CHAR parcurge lista in dreapta de la adresa degetului si schi
 Functia MOVE_LEFT_CHAR parcurge lista in stanga de la adresa degetului si daca este gasit caracterul schimba adresa degetului cu cea a celulei cu informatia corespunzatoare.
 
 
-#Operatii de tip QUERRY
+# Operatii de tip QUERRY
 
 Functia SHOW_CURRENT afiseaza informatia de la adresa degetului, primit ca parametru.
 Functia SHOW parcurge elementele din toata banda in ordine. Daca adresa elementului curect corespunde cu cea a degetului, informatia este afisata intre doua caractere | , iar daca nu sunt afisate normal.
 
 
-#Operatii de tip UNDO / REDO
+# Operatii de tip UNDO / REDO
 
 Functia UNDO adauga pointerul la pozitia curenta a degetului in stiva folosREDO, extrage din varful stivei folosUNDO pointerul, iar adresa degetului ia valoarea acestuia.
 Functia REDO adauga pointerul la pozitia curenta a degetului in stiva folosUNDO, extrage din varful stivei folosREDO pointerul, iar adresa degetului ia valoarea acestuia.
 
 
-#Operatia EXECUTE
+# Operatia EXECUTE
 
 Functia EXECUTE extrage mai intai string-ul din varful cozii. Compara acest string cu string-uri sugestive, pentru a determina ce functie trebuie apelata. Pentru functiile MOVE_LEFT_CHAR, MOVE_RIGHT_CHAR, INSERT_RIGHT si INSERT_LEFT, se va extrage caracterul aflat in string-ul extras si va fi folosit la apelul functiei respective. Daca functia apelata este MOVE_RIGHT sau MOVE_LEFT, se va da push in folosUNDO la adresa degetului inainte de a se apela functia respectiva.
-
-Local primesc punctajul de 100/100 si 20/20 la valgrind.
